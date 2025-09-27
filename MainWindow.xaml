@@ -1,0 +1,28 @@
+﻿<Window x:Class="SxFyDataConversion.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SxFyDataConversion"
+        mc:Ignorable="d"
+        Title="CSV⇔SML変換ツール" Height="300" Width="420" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <TextBlock Text="変換対象の選択方法" Margin="0,0,0,8" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,12">
+                <RadioButton x:Name="RBFile" Content="ファイル選択" IsChecked="True" Margin="0,0,16,0"/>
+                <RadioButton x:Name="RBFolder" Content="フォルダ選択"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,12">
+                <TextBlock Text="出力エンコード：" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <ComboBox x:Name="CBEncoding" Width="140" SelectedIndex="0">
+                    <ComboBoxItem Content="Shift_JIS" />
+                    <ComboBoxItem Content="UTF-8(BOMあり)" />
+                    <ComboBoxItem Content="UTF-8(BOMなし)" />
+                </ComboBox>
+            </StackPanel>
+            <Button x:Name="BtnConvert" Content="CSV→SML変換" Width="150" Height="40" HorizontalAlignment="Center" Margin="0,0,0,8" />
+            <Button x:Name="BtnSmlToCsv" Content="SML→CSV変換" Width="150" Height="40" HorizontalAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</Window>
