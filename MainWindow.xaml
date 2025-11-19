@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="CSV⇔SML変換ツール" Height="300" Width="420" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="208" >
             <TextBlock Text="変換対象の選択方法" Margin="0,0,0,8" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,12">
                 <RadioButton x:Name="RBFile" Content="ファイル選択" IsChecked="True" Margin="0,0,16,0"/>
@@ -21,7 +21,9 @@
                     <ComboBoxItem Content="UTF-8(BOMなし)" />
                 </ComboBox>
             </StackPanel>
+            <CheckBox x:Name="ChkWA" Content="F奇数W追加" IsChecked="True"/>
             <Button x:Name="BtnConvert" Content="CSV→SML変換" Width="150" Height="40" HorizontalAlignment="Center" Margin="0,0,0,8" />
+            <CheckBox x:Name="ChkWD" Content="F奇数W削除" IsChecked="True"/>
             <Button x:Name="BtnSmlToCsv" Content="SML→CSV変換" Width="150" Height="40" HorizontalAlignment="Center" />
         </StackPanel>
     </Grid>

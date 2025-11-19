@@ -168,6 +168,11 @@ Namespace SxFyDataConversion
                     fNum = rest.Substring(0, rest.IndexOf(" "))
                     wBit = rest.Substring(rest.IndexOf(" ") + 1)
                 End If
+
+                If ChkWD.IsChecked AndAlso wBit = "W" Then
+                    wBit = ""
+                End If
+
                 csvHeader = sNum & "," & fNum & If(wBit <> "", "," & wBit, "")
             Else
                 csvHeader = header
@@ -235,6 +240,11 @@ Namespace SxFyDataConversion
                 Dim result = $"S{parts(0)}F{parts(1)}"
                 If parts.Length >= 3 AndAlso Not String.IsNullOrWhiteSpace(parts(2)) Then
                     result &= " " & parts(2).Trim()
+                ElseIf ChkWA.IsChecked Then
+                    Dim num As Integer
+                    If Integer.TryParse(parts(1), num) AndAlso num Mod 2 = 1 Then
+                        result &= " W"
+                    End If
                 End If
                 Return result
             Else
